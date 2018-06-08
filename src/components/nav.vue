@@ -1,6 +1,6 @@
 <template>
 <div>
-  <ul>
+  <ul class="navlist">
     <li>
       <router-link to="/home/">Home</router-link>
     </li>
@@ -18,3 +18,12 @@ export default {
   name: "navbar" //一定不要用nav
 }
 </script>
+<style lang="stylus">
+  .navlist
+    overflow hidden
+    li
+      display inline-block
+      float left
+      margin 5px 10px
+
+</style>

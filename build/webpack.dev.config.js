@@ -1,7 +1,8 @@
 const merge = require('webpack-merge');
-const common = require('./webpack.base.js');
+const common = require('./webpack.config.js');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = merge(common, {
   devtool: 'inline-source-map',
@@ -21,8 +22,13 @@ module.exports = merge(common, {
 
   ],
   devServer: {
-    contentBase: './dist',
     port: 3058,
-    hot: true
+    hot: true,
+    contentBase: "./dist",
+    stats: {
+      colors: true
+    },
+    historyApiFallback: true,
+    inline: true
   }
 });
